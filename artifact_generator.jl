@@ -34,6 +34,6 @@ for f in files
 	triplet_str = replace(replace(basename(f), "."*postfix => ""), prefix*"." => "")
 	plat = Pkg.BinaryPlatforms.platform_key_abi(triplet_str)
 
-	bind_artifact!(artifact_toml, "ReSHOP", f_hash, platform=plat, download_info=[(url*basename(f), d_hash)])
+	bind_artifact!(artifact_toml, name, f_hash, platform=plat, download_info=[(url*basename(f), d_hash)])
 end
 
